@@ -12,3 +12,5 @@ There are a few unsupported codes (mainly dedicated to page / font size). If you
 properly I can implement them.
 
 The way I dumped the data is I simply connected a RS232 <-> USB converter accordingly and set the baud rate to 9600, 8n1 mode.
+
+The only dependency of this script is 'pypng'.
