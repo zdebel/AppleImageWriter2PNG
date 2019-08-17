@@ -130,6 +130,7 @@ while 1:
 	if idx >= len(data):
 		break
 
+#determine width and height
 for w in screen:
 	if len(w) > width:
 		width = len(w)
@@ -137,13 +138,16 @@ height = len(screen)
 
 print(str(width) + "x" + str(height))
 
+#open png file
 picture = open(sys.argv[1] + ".png", "wb")
 writer = png.Writer(width, height, greyscale = True)
 
+#prepare the screen buffer for the png writer
 for i in range(0, height):
 	l = len(screen[i])
 	for x in range(0, width - l):
 		screen[i].append(color_bg)
 	
+#write and close
 writer.write(picture, screen)
 picture.close()	
